@@ -13,51 +13,6 @@ A modern web-based tool that processes Apple Health sleep data to provide deep i
 ✅ Backend with Flask API (Processes Apple Health data)
 ✅ Front-end with React & Parcel (Fast, Lightweight, Beautiful)
 
-📁 Project Structure
-
-apple-sleep-insights/
-│
-├── backend/                     # Backend logic (Flask API)
-│   ├── app.py                   # Main backend server
-│   ├── requirements.txt          # Backend dependencies
-│   ├── uploads/                  # Folder for uploaded `.zip` files
-│   ├── parsers/                  # XML parsing logic for Apple Health data
-│   │   └── sleep_parser.py       # Sleep data extraction logic
-│   ├── tests/                    # Unit tests for backend
-│   │   └── test_parser.py        # Testing sleep data parsing
-│   └── README.md                 # Backend documentation
-│
-├── frontend/                     # Frontend logic (React + Parcel)
-│   ├── public/                   # Static assets
-│   │   └── index.html            # Main HTML file
-│   ├── src/                      # React source files
-│   │   ├── components/           # Reusable React components
-│   │   │   ├── UploadForm.jsx    # Upload form component
-│   │   │   ├── InsightsDashboard.jsx  # Dashboard for insights
-│   │   ├── App.jsx               # Main React App entry point
-│   │   ├── index.js              # React DOM entry point
-│   │   └── styles.css            # Global CSS styling
-│   ├── package.json              # Frontend dependencies
-│   └── README.md                 # Frontend documentation
-│
-├── automate/                     # Automation scripts
-│   ├── foldercreation.py         # Creates the folder structure
-│   ├── automate_backend.py       # Automates backend setup
-│   ├── automate_frontend.py      # Automates frontend setup
-│   ├── automate_integration.py   # Integrates frontend & backend
-│   ├── automate_all.py           # Runs all automation scripts
-│   ├── iphonefix.py              # Fixes iOS-related issues
-│   └── abc.py                    # Fixes frontend UI issues
-│
-├── ios-app/                      # Placeholder for iOS integration
-│   ├── SleepTracker/             # iOS project files
-│   ├── SleepTrackerTests/        # Unit tests for iOS
-│   ├── SleepTrackerUITests/      # UI tests for iOS
-│   └── README.md                 # iOS documentation
-│
-├── README.md                     # This file (Main project README)
-└── .gitignore                     # Ignore unnecessary files
-
 🚀 Getting Started
 
 Follow these steps to set up and run the project.
