@@ -1,6 +1,7 @@
 import SwiftUI
 import HealthKit
 
+@main
 struct SleepTrackerApp: View {
     @State private var sleepData: String = "No data"
     let healthDataManager = HealthDataManager()

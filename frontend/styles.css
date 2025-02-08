@@ -1,0 +1,174 @@
+/* --- Global Styles --- */
+:root {
+    --background-light: #f4f4f4;
+    --background-dark: #121212;
+    --card-light: rgba(255, 255, 255, 0.6);
+    --card-dark: rgba(25, 25, 25, 0.6);
+    --text-light: #222;
+    --text-dark: #e0e0e0;
+    --primary-color: #007aff;
+    --secondary-color: #5e5ce6;
+    --border-radius: 16px;
+    --shadow-light: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0px 8px 16px rgba(255, 255, 255, 0.1);
+    --blur-effect: blur(10px);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--background-dark);
+        color: var(--text-dark);
+    }
+
+    .app-container {
+        background: var(--card-dark);
+        box-shadow: var(--shadow-dark);
+    }
+
+    button {
+        background-color: var(--secondary-color);
+    }
+}
+
+/* --- Reset Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Background & Layout --- */
+body {
+    background: linear-gradient(135deg, #e0eaff, #c7d2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* --- App Container (Glassmorphism) --- */
+.app-container {
+    background: var(--card-light);
+    backdrop-filter: var(--blur-effect);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    padding: 24px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --- Title Styling --- */
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    color: var(--primary-color);
+}
+
+/* --- Upload Form --- */
+.upload-form {
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease-in-out;
+}
+
+.upload-form:hover {
+    transform: translateY(-2px);
+}
+
+/* --- File Input --- */
+input[type="file"] {
+    display: block;
+    margin: 10px auto;
+    padding: 12px;
+    border: 2px dashed var(--primary-color);
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.02);
+}
+
+/* --- Buttons --- */
+button {
+    background: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 122, 255, 0.3);
+}
+
+button:hover {
+    background: #005ecb;
+    transform: scale(1.05);
+}
+
+/* --- Insights Section (Neumorphism Effect) --- */
+.insights {
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: var(--border-radius);
+    background: linear-gradient(145deg, #e3e9ff, #c5d0ff);
+    box-shadow: inset 5px 5px 12px rgba(0, 0, 0, 0.1),
+                inset -5px -5px 12px rgba(255, 255, 255, 0.7);
+}
+
+/* --- Chart Styling --- */
+canvas {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+}
+
+/* --- Smooth Fade-in Animation --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.app-container,
+h1,
+.upload-form,
+.insights {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 600px) {
+    .app-container {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

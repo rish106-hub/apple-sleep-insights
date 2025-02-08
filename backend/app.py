@@ -1,20 +1,38 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
-from ai_analysis import generate_insights
+import os
+import zipfile
+from parsers.sleep_parser import parse_sleep_data
 
 app = Flask(__name__)
-CORS(app)  # This enables CORS for all routes
+UPLOAD_FOLDER = "uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-@app.route('/')
+@app.route("/", methods=["GET"])
 def home():
-    return "Hello from Flask!"
+    return jsonify({"message": "Backend is running!"})
 
-@app.route('/upload_sleep_data', methods=['POST'])
-def upload_sleep_data():
-    sleep_data = request.json  # Receive JSON data
-    print("Received sleep data:", sleep_data)  # Log for debugging
-    insights = generate_insights(sleep_data)
-    return jsonify(insights)
+@app.route("/upload", methods=["POST"])
+def upload_file():
+    if "file" not in request.files:
+        return jsonify({"error": "No file uploaded"}), 400
 
-if __name__ == '__main__':
+    file = request.files["file"]
+    if not file.filename.endswith(".zip"):
+        return jsonify({"error": "Invalid file format"}), 400
+
+    filepath = os.path.join(UPLOAD_FOLDER, file.filename)
+    file.save(filepath)
+
+    try:
+        with zipfile.ZipFile(filepath, "r") as zip_ref:
+            zip_ref.extractall(UPLOAD_FOLDER)
+
+        xml_file = os.path.join(UPLOAD_FOLDER, "export.xml")
+        insights = parse_sleep_data(xml_file)
+        return jsonify(insights), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+if __name__ == "__main__":
     app.run(debug=True)
