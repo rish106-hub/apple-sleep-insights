@@ -69,15 +69,15 @@ POST	/upload	Upload Apple Health .zip file and get insights
 🛠️ Troubleshooting
 
 Backend Issues
-Issue: ModuleNotFoundError: No module named 'flask'
-Fix: Run pip install flask inside the backend directory.
-Issue: OSError: Address already in use
-Fix: Find and kill the process using port 5000:
-lsof -i :5000
-kill -9 <PID>
+Issue: ModuleNotFoundError: No module named 'flask' <br>
+Fix: Run pip install flask inside the backend directory. <br>
+Issue: OSError: Address already in use  <br>
+Fix: Find and kill the process using port 5000:  <br>
+lsof -i :5000  <br>
+kill -9 <PID>   <br>
 Frontend Issues
-Issue: npm start not working
-Fix: Ensure "scripts" in package.json contains:
+Issue: npm start not working  <br>
+Fix: Ensure "scripts" in package.json contains:  <br>
 "scripts": {
   "start": "parcel index.html"
 }
