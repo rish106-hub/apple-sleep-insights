@@ -6,12 +6,12 @@ A modern web-based tool that processes Apple Health sleep data to provide deep i
 
 📌 Features
 
-✅ Upload Apple Health .zip files (exported from iOS)
-✅ AI-powered sleep analysis (Duration, Deep Sleep, Quality Score)
-✅ Beautiful, Apple-inspired UI (Smooth, Responsive, Dark Mode)
-✅ Interactive Charts & Graphs (Sleep Trends, Weekly Analysis)
-✅ Backend with Flask API (Processes Apple Health data)
-✅ Front-end with React & Parcel (Fast, Lightweight, Beautiful)
+✅ Upload Apple Health .zip files (exported from iOS) <br>
+✅ AI-powered sleep analysis (Duration, Deep Sleep, Quality Score)<br>
+✅ Beautiful, Apple-inspired UI (Smooth, Responsive, Dark Mode)<br>
+✅ Interactive Charts & Graphs (Sleep Trends, Weekly Analysis)<br>
+✅ Backend with Flask API (Processes Apple Health data)<br>
+✅ Front-end with React & Parcel (Fast, Lightweight, Beautiful)<br>
 
 🚀 Getting Started
 
